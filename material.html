@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Ejemplo Grid</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="javier.css" media="screen" />
+
+    </head>
+    <body>
+
+<div class="container ">  
+<div class="row">
+<div class="col-12">
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Mi Perfil <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Estudios</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          mas sobre mi
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="">Cursos Realizados</a>
+          <a class="dropdown-item" href="herramientas.html">Herramientas</a>
+          <a class="dropdown-item">Experiencia Laboral </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Proyectos Realizados</a>
+        </div>
+      </li>
+      
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="busqueda" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
+
+
+</div>
+
+</div>
+<div class="row"> 
+
+<div>
+<p class="cl tabla_clientes_title">TABLA DE CLIENTES</p>
+
+
+</div>
+</div>
+
+
+
+<div class="col-sm-6 col-md-6 col-lg-10 nombre table-responsive tabla_clientes"  >
+  <button class= "btn btn suscces " onclick = "abrirMOdal()"> Agregar </button>
+	<table class=" table table-striped table-bordered  table-hover  " id="table_clientes">
+		
+   <thead >
+   	<tr>
+   		<td>Nombre</td>
+   		<td>Apellido</td>
+   		<td>Cedula</td>
+     <td>Opciones</td>
+
+	</tr>
+</thead>
+<tbody  >
+	
+</tbody>
+</table>
+<div class="modal fade" id="myMOdal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Cliente</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<form>
+  <div class="form-group">
+      <label for="validation01">Nombre </label>
+      <input type="text" class="form-control is-valid" id="validation01" 
+             placeholder="First name" value="Mark" required>
+  </div>
+  <div class="form-group">
+      <label for="validation02">Apellido</label>
+      <input type="text" class="form-control is-invalid" id="validation02" placeholder="City" required>
+  </div>
+
+  <div class="form-group">
+      <label for="validation02">cedula</label>
+      <input type="text" class="form-control is-invalid" id="validation02" placeholder="City" required>
+  </div>
+</form>
+
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+        <button type="button" class="btn btn-primary">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script >   
+
+
+  $(document).ready(function(){
+
+  cargarTabla(); 
+
+   }); 
+
+
+
+//Cargamos la Tabla Inicial 
+function cargarTabla(){
+  var objetos = [];
+  var  objeto_uno = {nombre : "javier", apellido: "escalona", cedula:2222};
+  var  objeto_dos = {nombre : "yaneth", apellido: "escalona", cedula:3333};  
+
+   objetos.push(objeto_dos);
+   objetos.push(objeto_uno); 
+   console.log(objetos.length); 
+        for (var i = 0; i < objetos.length; i++){
+    
+
+     $('#table_clientes tbody').append(`<tr id="fila${objetos[i].cedula}">
+      <td>${objetos[i].nombre}</td>
+      <td>${objetos[i].apellido}</td>
+      <td>${objetos[i].cedula}</td>
+      <td>
+  <div class ="container"> 
+    <div  class ="row">
+       <div  class = "col-7" >
+         <button id ="edi${objetos[i].cedula}" onclick="editarCliente('${objetos[i].cedula}')"" class= "btn btn-success">Editar</button>
+         <button id ="eli${objetos[i].cedula}"  onclick ="eliminar('${objetos[i].cedula}')"  class= "btn btn-success" >Eliminar</button>
+      </div>
+      <div   class = "col-7">
+         <button id ="can${objetos[i].cedula}"  onclick = "eliminarRol('${objetos[i].cedula}')"  class= " d-none btn btn-success" >cancelar</button>
+         <button  id ="guar${objetos[i].cedula}"  onclick = "guardar('${objetos[i].ced}')"  class= "d-none btn btn-success" >Guardar</button>
+       </div>
+       </div>
+       </td>
+    </div>
+    </div>
+      
+      
+      </tr>`);
+ }
+}
+
+
+function abrirMOdal(e){
+
+$ ("#myMOdal").modal("show") ; 
+
+   
+ }
+
+
+function eliminar(x){
+swal("Elemento Elimindo satisfactoriamente", "You clicked the button!", "success");
+}
+
+
+ function editarCliente(cedula){
+ var fila_nombre = $('#fila'+cedula+' td:eq(1)');
+var ced = cedula; 
+
+  $(`#eli${ced}`).addClass("d-none"); 
+  $(`#edi${ced}`).addClass("d-none"); 
+  $(`#can${ced}`).removeClass("d-none");
+  $(`#guar${ced}`).removeClass("d-none");
+
+
+fila_nombre.html(`<input id="inputCompany" data-inputCompany="${fila_nombre}" name="name" class="form-control" value="${fila_nombre}" type="text">`);
+
+
+}
+ 
+
+
+</script>
+     </body>
+</html>
